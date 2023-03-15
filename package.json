@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@maybecode/m-chat": "^1.4.0"
+  }
+}

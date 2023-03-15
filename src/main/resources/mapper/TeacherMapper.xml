@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.spring.mapper.TeacherMapper">
+<!--动态修改数据库，输入其中一个可以修改，其余不变-->
+    <update id="update">
+        update t_teacher
+        <set>
+            <if test="teachername != null">
+                teachername = #{teachername},
+            </if>
+            <if test="password != null">
+                password = #{password}
+            </if>
+            <if test="phone != null">
+                phone = #{phone}
+            </if>
+            <if test="iden != null">
+                iden = #{iden}
+            </if>
+            <if test="subject != null">
+                subject = #{subject}
+            </if>
+            <if test="wxnumber != null">
+                wxnumber = #{wxnumber}
+            </if>
+            <if test="price != null">
+                price = #{price}
+            </if>
+            <if test="school != null">
+                school = #{school}
+            </if>
+            <if test="address != null">
+                address = #{address}
+            </if>
+        </set>
+        <where>
+            id == #{id}
+        </where>
+    </update>
+</mapper>
